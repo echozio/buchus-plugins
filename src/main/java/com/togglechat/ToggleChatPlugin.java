@@ -141,7 +141,7 @@ public class ToggleChatPlugin extends Plugin implements KeyListener
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
-		if (config.hotKey().matches(e))
+		if (config.hotKey0().matches(e) || config.hotKey1().matches(e))
 		{
 			if (Keybind.getModifierForKeyCode(e.getKeyCode()) == null && e.getKeyCode() != KeyEvent.VK_ESCAPE)
 			{
@@ -156,7 +156,7 @@ public class ToggleChatPlugin extends Plugin implements KeyListener
 	@Override
 	public void keyReleased(KeyEvent e)
 	{
-		if (config.hotKey().matches(e))
+		if (config.hotKey0().matches(e) || config.hotKey1().matches(e))
 		{
 			consumeKeys = false;
 		}

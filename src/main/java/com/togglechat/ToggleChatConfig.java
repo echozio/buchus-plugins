@@ -34,12 +34,23 @@ import net.runelite.client.config.Keybind;
 public interface ToggleChatConfig extends Config
 {
 	@ConfigItem(
-		keyName = "hotKey",
+		keyName = "hotKey0",
 		name = "Chat Toggle",
 		description = "Pressing this key will toggle the chatbox",
 		position = 0
 	)
-	default Keybind hotKey()
+	default Keybind hotKey0()
+	{
+		return Keybind.NOT_SET;
+	}
+
+	@ConfigItem(
+		keyName = "hotKey1",
+		name = "Chat Toggle Secondary",
+		description = "Pressing this key will toggle the chatbox",
+		position = 1
+	)
+	default Keybind hotKey1()
 	{
 		return Keybind.NOT_SET;
 	}
@@ -48,7 +59,7 @@ public interface ToggleChatConfig extends Config
 		keyName = "defaultTab",
 		name = "Default Tab",
 		description = "The tab to open to when the hotkey is pressed",
-		position = 1
+		position = 2
 	)
 	default TabMode defaultTab()
 	{
@@ -59,7 +70,7 @@ public interface ToggleChatConfig extends Config
 	@ConfigSection(
 		name = "Notification Flash Settings",
 		description = "Customization for the flash settings.",
-		position = 2,
+		position = 3,
 		closedByDefault = true
 	)
 	String flashSection = "flashSection";
